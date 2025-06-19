@@ -1,7 +1,7 @@
 name: Release CV PDF
 
 on:permissions:
-  contents: write
+   contents: write
   # ou bien plus spécifique si besoin
 
   push:
