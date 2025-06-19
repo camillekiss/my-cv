@@ -1,12 +1,12 @@
 name: Release CV PDF
 
-on:permissions:
-   contents: write
-  # ou bien plus spécifique si besoin
-
+on:
   push:
     tags:
       - 'v*'
+
+permissions:
+  contents: write
 
 jobs:
   release:
@@ -31,3 +31,4 @@ jobs:
           files: cv.pdf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
