@@ -1,0 +1,15 @@
+# Ignore generated PDF
+cv.pdf
+
+# VS Code files (si tu utilises VS Code)
+.vscode/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# LaTeX aux files (au cas où)
+*.aux
+*.log
+*.out
+*.toc
