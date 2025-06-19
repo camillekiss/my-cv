@@ -1,0 +1,29 @@
+name: Build CV PDF
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Pandoc and TeX dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex
+
+      - name: Generate PDF from Markdown
+        run: |
+          pandoc cv.md -o cv.pdf
+
+      - name: Upload generated PDF
+        uses: actions/upload-artifact@v3
+        with:
+          name: CV-PDF
+          path: cv.pdf
