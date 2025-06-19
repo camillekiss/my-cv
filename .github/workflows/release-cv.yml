@@ -1,6 +1,9 @@
 name: Release CV PDF
 
-on:
+on:permissions:
+  contents: write
+  # ou bien plus spécifique si besoin
+
   push:
     tags:
       - 'v*'
